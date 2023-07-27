@@ -1,6 +1,6 @@
 let first_button_click = false;
 let score_button = 0;
-function handle_button_click(button_id){
+function handle_button_click(button_class, button_id){
     if (button_id === 'btn1' || button_id === 'btn2' || button_id === 'btn3' || button_id === 'btn4' || button_id === 'btn5' || button_id === 'btn6' || button_id === 'btn7'){
         first_button_click = true;
         switch(button_id){
@@ -30,8 +30,32 @@ function handle_button_click(button_id){
         }
         
     }
-    else if(button_id === 'success' && first_button_click){
-        document.getElementById('info').innerHTML = score_button+"號發球成功";
+    else if(button_class === 'serve' && first_button_click){
+        document.getElementById('info').innerHTML = score_button+"號發球"+document.getElementById(button_id).innerHTML;
+        first_button_click = false;
+    }
+
+    else if(button_class === 'recieve' && first_button_click){
+        document.getElementById('info').innerHTML = score_button+"號接發"+document.getElementById(button_id).innerHTML;
+        first_button_click = false;
+    }
+
+    else if(button_class === 'attack' && first_button_click){
+        document.getElementById('info').innerHTML = score_button+"號攻擊"+document.getElementById(button_id).innerHTML;
+        first_button_click = false;
+    }
+    else if(button_class === 'defense' && first_button_click){
+        document.getElementById('info').innerHTML = score_button+"號防守"+document.getElementById(button_id).innerHTML;
+        first_button_click = false;
+    }
+
+    else if(button_class === 'block' && first_button_click){
+        document.getElementById('info').innerHTML = score_button+"號欄網"+document.getElementById(button_id).innerHTML;
+        first_button_click = false;
+    }
+
+    else if(button_class === 'setting' && first_button_click){
+        document.getElementById('info').innerHTML = score_button+"號舉球/修正"+document.getElementById(button_id).innerHTML;
         first_button_click = false;
     }
 }
@@ -51,33 +75,93 @@ document.getElementById('rightadd').addEventListener('click', function(){
 })
 
 document.getElementById('btn1').addEventListener('click', function(){
-    handle_button_click('btn1');
-});
-
-document.getElementById('success').addEventListener('click', function(){
-    handle_button_click('success');
+    handle_button_click('number', 'btn1');
 });
 
 document.getElementById('btn2').addEventListener('click', function(){
-    handle_button_click('btn2');
+    handle_button_click('number', 'btn2');
 });
 
 document.getElementById('btn3').addEventListener('click', function(){
-    handle_button_click('btn3');
+    handle_button_click('number', 'btn3');
 });
 
 document.getElementById('btn4').addEventListener('click', function(){
-    handle_button_click('btn4');
+    handle_button_click('number', 'btn4');
 });
 
 document.getElementById('btn5').addEventListener('click', function(){
-    handle_button_click('btn5');
+    handle_button_click('number', 'btn5');
 });
 
 document.getElementById('btn6').addEventListener('click', function(){
-    handle_button_click('btn6');
+    handle_button_click('number', 'btn6');
 });
 
 document.getElementById('btn7').addEventListener('click', function(){
-    handle_button_click('btn7');
+    handle_button_click('number', 'btn7');
 });
+
+document.getElementsByClassName('serve')[0].addEventListener('click', function(){
+    handle_button_click('serve', 's_success');
+})
+
+document.getElementsByClassName('serve')[1].addEventListener('click', function(){
+    handle_button_click('serve', 's_score');
+})
+
+document.getElementsByClassName('serve')[2].addEventListener('click', function(){
+    handle_button_click('serve', 's_mistake');
+})
+
+document.getElementsByClassName('recieve')[0].addEventListener('click', function(){
+    handle_button_click('recieve', 'r_nice');
+})
+
+document.getElementsByClassName('recieve')[1].addEventListener('click', function(){
+    handle_button_click('recieve', 'r_mistake');
+})
+
+document.getElementsByClassName('attack')[0].addEventListener('click', function(){
+    handle_button_click('attack', 'a_success');
+})
+
+document.getElementsByClassName('attack')[1].addEventListener('click', function(){
+    handle_button_click('attack', 'a_score');
+})
+
+document.getElementsByClassName('attack')[2].addEventListener('click', function(){
+    handle_button_click('attack', 'a_mistake');
+})
+
+document.getElementsByClassName('defense')[0].addEventListener('click', function(){
+    handle_button_click('defense', 'd_nice');
+})
+
+document.getElementsByClassName('defense')[1].addEventListener('click', function(){
+    handle_button_click('defense', 'd_mistake');
+})
+
+document.getElementsByClassName('block')[0].addEventListener('click', function(){
+    handle_button_click('block', 'b_touch');
+})
+
+document.getElementsByClassName('block')[1].addEventListener('click', function(){
+    handle_button_click('block', 'b_mistake');
+})
+
+document.getElementsByClassName('block')[2].addEventListener('click', function(){
+    handle_button_click('block', 'b_score');
+})
+
+document.getElementsByClassName('block')[3].addEventListener('click', function(){
+    handle_button_click('block', 'b_seam');
+})
+
+document.getElementsByClassName('setting')[0].addEventListener('click', function(){
+    handle_button_click('setting', 'se_nice');
+})
+
+document.getElementsByClassName('setting')[1].addEventListener('click', function(){
+    handle_button_click('setting', 'se_mistake');
+})

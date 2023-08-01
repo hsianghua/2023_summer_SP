@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
     <head>
         <meta charset="utf-8">
-        <title>排球紀錄系統</title>
+        <link rel="stylesheet" href="css/style.css">
+        <title>排球紀錄網站</title>
     </head>
 
     <body>
@@ -12,14 +13,19 @@
             </nav>
         </header>
         <hr>
-        <p>ntnu vs ntu</p>
+        <div>
+            <span id="leftteam"><?php echo &_POST["home_team"]; ?></span> vs <span id="rightteam"></span>
+        </div>
         <div>
             <h4>目前比分</h4>
             <button type="button" id="leftadd">+</button>
             <span id="leftscore">0</span><span> : </span><span id="rightscore">0</span>
             <button type="button" id="rightadd">+</button>
         </div>
-        <p>局數</p>
+        <div>
+            <h4>局數</h4>
+            <p id="set"></p>
+        </div>
         <hr>
         <div>
             <h4>提示訊息</h4>

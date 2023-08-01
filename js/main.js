@@ -1,5 +1,7 @@
 let first_button_click = false;
 let score_button = 0;
+let left_set = 0;
+let right_set = 0;
 function handle_button_click(button_class, button_id){
     if (button_id === 'btn1' || button_id === 'btn2' || button_id === 'btn3' || button_id === 'btn4' || button_id === 'btn5' || button_id === 'btn6' || button_id === 'btn7'){
         first_button_click = true;
@@ -60,17 +62,30 @@ function handle_button_click(button_class, button_id){
     }
 }
 
+document.getElementById('set').innerHTML = left_set + ' : ' + right_set;
 document.getElementById('leftadd').addEventListener('click', function(){
     document.getElementById('leftscore').innerHTML++;
-    if (document.getElementById('leftscore').innerHTML >= 10){
-        alert("game over");
+    if (document.getElementById('leftscore').innerHTML >= 25){
+        document.getElementById('info').innerHTML = "一局結束";
+        document.getElementById('leftscore').innerHTML = 0;
+        left_set++;
+        document.getElementById('set').innerHTML = left_set + ' : ' + right_set;
+        if (left_set === 2){
+            document.getElementById('info').innerHTML = "比賽結束";
+        }
     }
 });
 
 document.getElementById('rightadd').addEventListener('click', function(){
     document.getElementById('rightscore').innerHTML++;
     if (document.getElementById('rightscore').innerHTML >= 25){
-        alert("game over");
+        document.getElementById('info').innerHTML = "一局結束";
+        document.getElementById('rightscore').innerHTML = 0;
+        right_set++;
+        document.getElementById('set').innerHTML = left_set + ' : ' + right_set;
+        if (right_set === 2){
+            document.getElementById('info').innerHTML = "比賽結束";
+        }
     }
 })
 
@@ -165,3 +180,24 @@ document.getElementsByClassName('setting')[0].addEventListener('click', function
 document.getElementsByClassName('setting')[1].addEventListener('click', function(){
     handle_button_click('setting', 'se_mistake');
 })
+
+var home_name;
+var away_name;
+
+// function check_set_up_info(){
+//     document.getElementById('alert_home').innerHTML = "";
+//     document.getElementById('alert_away').innerHTML = "";
+//     home_name = document.forms["team_name"].elements["home_team"].value;
+//     away_name = document.forms["team_name"].elements["away_team"].value;
+//     if (home_name == "" || away_name == ""){
+//         if (home_name == "")
+//             document.getElementById('alert_home').innerHTML = "*必填";
+//         if (away_name == "")
+//             document.getElementById('alert_away').innerHTML = "*必填";
+//         return;
+//     }
+//     else {
+//         document.location.href="index.html";
+//     }
+// }
+

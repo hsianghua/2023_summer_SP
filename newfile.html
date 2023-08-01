@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <title>排球紀錄網站</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <p>Login/Logout</p>
+            </nav>
+        </header>
+        <hr>
+        <form id="team_name" action="index.php" method="POST">
+            <label for="home_team">主隊</label>
+            <input id="home_team" type="text" required>
+            <span id="alert_home"></span>
+            <br>
+            <label for="away_team">客隊</label>
+            <input id="away_team" type="text" required>
+            <span id="alert_away"></span>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+        
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

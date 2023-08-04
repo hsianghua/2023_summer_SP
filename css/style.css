@@ -10,3 +10,11 @@ button:hover {
     background-color: aqua;
 
 }
+
+#set {
+    display: inline;
+}
+
+#set_hide {
+    display: none;
+}

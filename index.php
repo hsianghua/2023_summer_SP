@@ -14,7 +14,12 @@
         </header>
         <hr>
         <div>
-            <span id="leftteam"><?php echo &_POST["home_team"]; ?></span> vs <span id="rightteam"></span>
+            <span id="leftteam">
+                <?php echo $_POST["home_team"]; ?>
+            </span> vs 
+            <span id="rightteam">
+                <?php echo $_POST["away_team"]; ?>
+            </span>
         </div>
         <div>
             <h4>目前比分</h4>
@@ -25,6 +30,13 @@
         <div>
             <h4>局數</h4>
             <p id="set"></p>
+            <span id="set_hide">
+                <?php 
+                    $num = $_POST["set_num"];
+                    if ($num == "three_set") echo "3";
+                    else echo "5";
+                ?>
+            </span>
         </div>
         <hr>
         <div>
@@ -34,13 +46,27 @@
         <hr>
         <div>
             <h4>即時輪轉站位</h4>
-            <button type="button" class="number" id="btn1">1</button>
-            <button type="button" class="number" id="btn2">2</button>
-            <button type="button" class="number" id="btn3">3</button>
-            <button type="button" class="number" id="btn4">4</button>
-            <button type="button" class="number" id="btn5">5</button>
-            <button type="button" class="number" id="btn6">6</button>
-            <button type="button" class="number" id="btn7">7</button>
+            <button type="button" class="number" id="btn1">
+                <?php echo $_POST["1"]; ?>
+            </button>
+            <button type="button" class="number" id="btn2">
+                <?php echo $_POST["2"]; ?>
+            </button>
+            <button type="button" class="number" id="btn3">
+                <?php echo $_POST["3"]; ?>
+            </button>
+            <button type="button" class="number" id="btn4">
+                <?php echo $_POST["4"]; ?>
+            </button>
+            <button type="button" class="number" id="btn5">
+                <?php echo $_POST["5"]; ?>
+            </button>
+            <button type="button" class="number" id="btn6">
+                <?php echo $_POST["6"]; ?>
+            </button>
+            <button type="button" class="number" id="btn7">
+                <?php echo $_POST["libero"]; ?>
+            </button>
         </div>
 
         <hr>

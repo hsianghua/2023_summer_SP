@@ -180,24 +180,3 @@ document.getElementsByClassName('setting')[0].addEventListener('click', function
 document.getElementsByClassName('setting')[1].addEventListener('click', function(){
     handle_button_click('setting', 'se_mistake');
 })
-
-var home_name;
-var away_name;
-
-// function check_set_up_info(){
-//     document.getElementById('alert_home').innerHTML = "";
-//     document.getElementById('alert_away').innerHTML = "";
-//     home_name = document.forms["team_name"].elements["home_team"].value;
-//     away_name = document.forms["team_name"].elements["away_team"].value;
-//     if (home_name == "" || away_name == ""){
-//         if (home_name == "")
-//             document.getElementById('alert_home').innerHTML = "*必填";
-//         if (away_name == "")
-//             document.getElementById('alert_away').innerHTML = "*必填";
-//         return;
-//     }
-//     else {
-//         document.location.href="index.html";
-//     }
-// }
-

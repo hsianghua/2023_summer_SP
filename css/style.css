@@ -2,12 +2,23 @@
     box-sizing: border-box;
 }
 
-header {
-    color:blue;
+button:hover {
+    background-color: #4CAF50;
+    color: white;
 }
 
-button:hover {
-    background-color: aqua;
+button {
+    transition-duration: 0.4s;
+    background-color: white;
+    color:black;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+button:focus{
+    color:blueviolet;
+    
 
 }
 
@@ -18,3 +29,26 @@ button:hover {
 #set_hide {
     display: none;
 }
+
+.header-flex-box-container{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.header-box{
+    background-color:khaki;
+    border: 5px;
+    width: 400px;
+    margin: 20px;
+}
+
+#leftscore, #rightscore, #score, #leftteam, #rightteam{
+    font-size: 24px;
+}
+
+#set{
+    font-size: 20px;
+}
+
+

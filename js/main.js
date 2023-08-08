@@ -180,3 +180,18 @@ document.getElementsByClassName('setting')[0].addEventListener('click', function
 document.getElementsByClassName('setting')[1].addEventListener('click', function(){
     handle_button_click('setting', 'se_mistake');
 })
+
+let change_num = 0;
+let timeout_num = 0;
+
+document.getElementById('info_change').innerHTML = "換人: 0次";
+document.getElementById('change').addEventListener('click', function(){
+    change_num++;
+    document.getElementById('info_change').innerHTML = "換人: " + change_num + "次";
+})
+
+document.getElementById('info_timeout').innerHTML = "暫停: 0次";
+document.getElementById('timeout').addEventListener('click', function(){
+    timeout_num++;
+    document.getElementById('info_timeout').innerHTML = "暫停: " + timeout_num + "次";
+})

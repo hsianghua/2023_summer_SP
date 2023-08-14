@@ -18,8 +18,6 @@ button {
 
 button:focus{
     color:blueviolet;
-    
-
 }
 
 #set {
@@ -30,13 +28,13 @@ button:focus{
     display: none;
 }
 
-.header-flex-box-container{
+.header-flex-box-container, .body-flex-box-container{
     display: flex;
     text-align: center;
     justify-content: center;
 }
 
-.header-box{
+.header-box, .body-box{
     background-color:khaki;
     border: 5px;
     width: 400px;
@@ -50,5 +48,41 @@ button:focus{
 #set{
     font-size: 20px;
 }
+
+footer {
+    background-color: saddlebrown;
+    color: white;
+    margin: 0;
+    padding: 0;
+    position: sticky;
+    top: -50px;
+    height: 110px;
+    text-align: center;
+}
+
+footer>p{
+    margin: 0;
+    font-size: 12px;
+}
+
+.wrapper{
+    min-height: 100%;
+    padding-bottom: 90px;
+    margin: 0px;
+    padding: 0;
+    background-color: burlywood;
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+img{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
 
 

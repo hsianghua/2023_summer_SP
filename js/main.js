@@ -195,3 +195,7 @@ document.getElementById('timeout').addEventListener('click', function(){
     timeout_num++;
     document.getElementById('info_timeout').innerHTML = "暫停: " + timeout_num + "次";
 })
+
+document.getElementById('other_mistake').addEventListener('click', function(){
+    document.getElementById('info').innerHTML = "對方失誤";
+})
